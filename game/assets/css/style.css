@@ -4,32 +4,24 @@
     box-sizing: border-box;
 }
 body{
-    /* font-family:'Barrio', cursiva; 'Ubuntu Mono', monoespaço; */
-
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 #wpp{
-    position:relative;
-    height:100vh;
-    overflow: hidden;
-    
-}
-
-#wpp::before{
-    z-index:-1;
-    content:'';
-    display:flex;
-    left:-50%;
-    top:-50%;
     position:absolute;
-    width:200%;
-    height:340%;
+    width:100%;
+    height:100%;
     background-image: url("../images/granulado-colorido.jpg");
     background-position: center;
     background-size: cover;
-    animation:jingado 120s linear infinite;
+    z-index:-1;
 }
 
-@keyframes jingado {
+
+
+/* @keyframes jingado {
     0%{
         transform:rotate(0);
     }
@@ -37,7 +29,7 @@ body{
     {
         transform:rotate(181deg);
     }
-}
+} */
 
 .topo{
     height:50px;
@@ -53,10 +45,11 @@ body{
 }
 
 .body{
-    height:calc(100% - 50px);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1;
+    padding: 40px;
 }
 
 .container{
@@ -71,7 +64,6 @@ body{
 }
 .container-int{
     margin:auto;
-    max-width: 350px;
 }
 /* CARDS IMAGENS DO GAME */
 .game-cards{
@@ -80,21 +72,17 @@ body{
     justify-content: center;
     align-items: center;
 }
-.game-cards-area{
+.game-cardsinfo{
     width: 140px;
-    height: 140px;
-    margin-left:10px;
-    margin-right:10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.game-cards-area .game-icone img{
-    width: 140px;
-    height: 140px; 
+    height:140px;
+    margin: 10px;
+    position:relative;
 }
 .game-cardsinfo img{
-    width: 140px;
-    height: 140px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.8);
+    left:0;
+    top:0;
 }
